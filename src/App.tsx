@@ -1,13 +1,20 @@
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
 
-import GamePage from './pages/GamePage';
-import StartPage from './pages/StartPage';
+import GamePage from "./pages/GamePage";
+import StartPage from "./pages/StartPage";
+import EndPage from "./pages/EndPage";
 
 function App() {
   return (
-    <div className="App">
-      <StartPage />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<StartPage />} />
+        <Route path="/trivia" element={<GamePage />} />
+        <Route path="/submitheader" element={<EndPage />} />
+        <Route path="*" element={<StartPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
@@ -22,7 +29,7 @@ export default App;
 // Features
 
 // Game ends when timer is up if no answer chosen
-// Display genre of each question 
+// Display genre of each question
 // Leaderboard
 // Share score at end screen
 // Display all questions answered correctly at end screen with all choices
@@ -33,4 +40,3 @@ export default App;
 // About page somewhere (footer or nav?)
 
 // Use Typescript, React Router, focus on CLEAN ORGANIZED CSS.
-
