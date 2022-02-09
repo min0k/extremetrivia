@@ -1,21 +1,31 @@
-import {OpenTDBResponse} from "./Interface";
+import { OpenTDBResponse } from "./Interface";
+import decoder from "./decoder";
 
-// decode, randomize, and only accept whats needed.
+export default function prepareQuestions(obj: OpenTDBResponse[]) {
 
-
-export default function prepareQuestions(
-  obj: OpenTDBResponse[]
-) {
+  // decode html entities
   const preparedQuestions = obj.map((e) => {
+    const decodedQuestion = decoder(e.question);
+    const decodedCorrectAnswer = decoder(e.correct_answer);
+    const decodedIncorrectAnswers = e.incorrect_answers.map((e) => {
+      return decoder(e);
+    });
+
+    // shuffle all 4 answers
+    const allChoices = decodedIncorrectAnswers;
+    allChoices.push(decodedCorrectAnswer)
+
+    const shuffled = allChoices
+    .map((value) => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
+
     return {
       category: e.category,
-      correct_answer: e.correct_answer,
-      difficulty: e.difficulty,
-      incorrect_answers: [e.incorrect_answers[0], e.incorrect_answers[1], e.incorrect_answers[2]],
-      length: e.length,
-      question: e.question,
-      type: e.type,
+      correct_answer: decodedCorrectAnswer,
+      all_choices: shuffled,
+      question: decodedQuestion,
     };
   });
-  return preparedQuestions
+  return preparedQuestions;
 }

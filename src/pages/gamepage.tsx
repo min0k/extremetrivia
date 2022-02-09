@@ -6,10 +6,13 @@ export default function GamePage() {
 
     const {triviaQuestions} = useGameLogic();
     
+    console.log(triviaQuestions);
+
+
 
     return (
         <div>
-            <h1>hey!</h1>
+            <h1>hi</h1>
         </div>
     )
 }

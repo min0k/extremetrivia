@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import getQuestions from "../api/getQuestions";
 import prepareQuestions from "./prepareQuestions";
-import { OpenTDBResponse } from "./Interface";
 
 export default function useGameLogic() {
   const [triviaQuestions, setTriviaQuestions] = useState<Array<{}>>();
@@ -17,8 +16,6 @@ export default function useGameLogic() {
 
   }, []);
 
-  console.log(triviaQuestions);
-  console.log("helloo");
 
   return {
     triviaQuestions,
