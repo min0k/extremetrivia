@@ -25,6 +25,7 @@ export default function prepareQuestions(obj: OpenTDBResponse[]) {
       correct_answer: decodedCorrectAnswer,
       all_choices: shuffled,
       question: decodedQuestion,
+      answered: false,
     };
   });
   return preparedQuestions;

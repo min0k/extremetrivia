@@ -17,6 +17,7 @@ export default function useGameLogic() {
   }, []);
 
 
+
   return {
     triviaQuestions,
   };

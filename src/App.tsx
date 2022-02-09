@@ -1,11 +1,12 @@
 import './App.css';
 
 import GamePage from './pages/GamePage';
+import StartPage from './pages/StartPage';
 
 function App() {
   return (
     <div className="App">
-      <GamePage />
+      <StartPage />
     </div>
   );
 }
