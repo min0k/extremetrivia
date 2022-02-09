@@ -1,6 +1,10 @@
 import React from 'react';
 import './App.css';
 
+import getQuestions from './api/getQuestions';
+
+getQuestions().then(data => console.log(data));
+
 function App() {
   return (
     <div className="App">
