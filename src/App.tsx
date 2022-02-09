@@ -1,14 +1,11 @@
-import React from 'react';
 import './App.css';
 
-import getQuestions from './api/getQuestions';
-
-getQuestions().then(data => console.log(data));
+import GamePage from './pages/GamePage';
 
 function App() {
   return (
     <div className="App">
-      <h1>hello</h1>
+      <GamePage />
     </div>
   );
 }
@@ -29,6 +26,7 @@ export default App;
 // Share score at end screen
 // Display all questions answered correctly at end screen with all choices
 // New game option at end screen
+// Game ends after 50 questions answered correctly in a row
 
 // Use React Router for start screen, game page, and about page.
 // About page somewhere (footer or nav?)
