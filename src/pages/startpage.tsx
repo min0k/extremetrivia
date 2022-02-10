@@ -12,7 +12,7 @@ export default function StartPage() {
         You only have 15 seconds to answer each question. 
         Answer 100 questions correctly to win.
       </p>
-      <button onClick={() => navigate("/trivia")}>go somwhere else</button>
+      <button onClick={() => navigate("/trivia")}>START GAME</button>
     </div>
   );
 }

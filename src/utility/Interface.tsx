@@ -8,3 +8,11 @@ export interface OpenTDBResponse {
     question: string;
     type: string;
 }
+
+export interface triviaObject {
+    category: string,
+    correct_answer: string,
+    all_choices: string[],
+    question: string,
+    answered: boolean,
+  }
