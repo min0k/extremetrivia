@@ -5,7 +5,7 @@ import { triviaObject } from "./Interface";
 
 
 export default function useGameLogic() {
-  const [triviaQuestions, setTriviaQuestions] = useState<triviaObject[]>();
+  const [triviaQuestions, setTriviaQuestions] = useState<triviaObject[] | null>(null);
 
   useEffect(() => {
     async function createTriviaQuestions() {

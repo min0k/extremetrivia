@@ -20,7 +20,18 @@ function App() {
 
 export default App;
 
+
+
+
+
+
+
 // API -- https://opentdb.com/
+
+
+
+
+
 // Welcome to Extreme Trivia. Think you're a know-it-all? Prove it.
 
 // You only have 15 seconds to answer each question.

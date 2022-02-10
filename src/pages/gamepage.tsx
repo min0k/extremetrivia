@@ -1,23 +1,27 @@
 import useGameLogic from "../utility/useGameLogic";
+import QuestionCard from "../components/QuestionCard";
 import { nanoid } from "nanoid";
 
 export default function GamePage() {
   const { triviaQuestions } = useGameLogic();
 
+  console.log(triviaQuestions);
 
-
-
-  // STOP CODING, think carefully about how you want to architect from now
-  const Questions =  triviaQuestions?.map(e => {
+  const TriviaCard = triviaQuestions?.map((e) => {
       const key = nanoid();
-        return <h1 key={key}>{e.question}</h1>
-    })
+      return (
+        <QuestionCard
+          question={e.question}
+          all_choices={e.all_choices}
+          category={e.category}
+          correct_answer={e.correct_answer}
+          answered={e.answered}
+          key={key}
+        />
+      );
+    });
 
-    console.log(Questions);
-
-  return (
-    <div>
-      <h1>game page</h1>
-    </div>
-  );
+  return <div>
+    {triviaQuestions && TriviaCard}
+  </div>;
 }
