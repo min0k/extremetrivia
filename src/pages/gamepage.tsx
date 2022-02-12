@@ -1,27 +1,28 @@
 import useGameLogic from "../utility/useGameLogic";
 import QuestionCard from "../components/QuestionCard";
-import { nanoid } from "nanoid";
 
 export default function GamePage() {
   const { triviaQuestions } = useGameLogic();
 
-  console.log(triviaQuestions);
-
-  const TriviaCard = triviaQuestions?.map((e) => {
-      const key = nanoid();
-      return (
+  const TriviaCard = triviaQuestions?.map((e, idx) => {
+      // Use index instead of key, keys should be consistent because
+      // React uses keys to determine re-render effects
+    return (
         <QuestionCard
-          question={e.question}
+        question={e.question}
           all_choices={e.all_choices}
           category={e.category}
           correct_answer={e.correct_answer}
           answered={e.answered}
-          key={key}
+          key={idx}
         />
       );
     });
 
+    console.log(TriviaCard);
+    
+
   return <div>
-    {triviaQuestions && TriviaCard}
+    {triviaQuestions ? TriviaCard : <h1>loading...</h1>}
   </div>;
 }
