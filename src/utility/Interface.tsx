@@ -2,7 +2,7 @@ export interface OpenTDBResponse {
   category: string;
   correct_answer: string;
   difficulty: string;
-  incorrect_answers: [string, string, string];
+  incorrect_answers: string[];
   length: number;
   question: string;
   type: string;
@@ -14,4 +14,5 @@ export interface triviaObject {
     all_choices: string[];
     question: string;
     answered: boolean;
+    handleClick?(): void;
 }

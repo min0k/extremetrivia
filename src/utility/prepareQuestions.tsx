@@ -17,7 +17,7 @@ export default function prepareQuestions(obj: OpenTDBResponse[]) {
 
     const shuffled = allChoices
     .map((value) => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
+    .sort(() =>  Math.random() -  Math.random())
     .map(({ value }) => value);
 
     return {

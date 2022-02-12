@@ -8,11 +8,13 @@ export default function useGameLogic() {
   const [triviaQuestions, setTriviaQuestions] = useState<triviaObject[] | null>(null);
 
   useEffect(() => {
+    
     async function createTriviaQuestions() {
       const data = await getQuestions();
-      const questions = await prepareQuestions(data);
+      const questions = prepareQuestions(data);
       setTriviaQuestions(questions);
     }
+
     createTriviaQuestions();
   }, []);
 
