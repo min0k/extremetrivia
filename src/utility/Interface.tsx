@@ -1,3 +1,5 @@
+
+
 export interface OpenTDBResponse {
   category: string;
   correct_answer: string;
@@ -14,5 +16,5 @@ export interface triviaObject {
     all_choices: string[];
     question: string;
     answered: boolean;
-    handleClick?(): void;
 }
+
