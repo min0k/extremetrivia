@@ -4,9 +4,7 @@ import prepareQuestions from "./prepareQuestions";
 import { triviaObject } from "./Interface";
 
 export default function useGameLogic() {
-  const [triviaQuestions, setTriviaQuestions] = useState<triviaObject[] | null>(
-    null
-  );
+  const [triviaQuestions, setTriviaQuestions] = useState<triviaObject[]>();
   const [currentQuestionNumber, setCurrentQuestionNumber] = useState(0);
 
   useEffect(() => {
@@ -21,21 +19,24 @@ export default function useGameLogic() {
 
   function handleClick(e?: React.MouseEvent) {
     setCurrentQuestionNumber((prevNumber) => prevNumber + 1);
-    console.log(`this is question # ${currentQuestionNumber + 1}`);
-    if (e) {
-      updateTriviaQuestions(e);
-    }
-
+    // updateTriviaQuestions();
   }
 
-  // handle triviaQuestion state update here!
-  // figure out which question has been answered, if correct keep going forward,
-  // if wrong, end the game. Count all answered questions and that's how many they got right
-  // (if answered incorrectly, game would auto end so no need to have "correct answer" state,etc)
-
-  function updateTriviaQuestions(event: React.MouseEvent) {
-    console.log(event);
-  }
+  // const updateTriviaQuestions = (question: string) => {
+  //   const newTriviaQuestions : triviaObject = triviaQuestions?.map((obj) => {
+  //     if (obj.question === question) {
+  //       return {
+  //         ...obj,
+  //         answered: !obj.answered
+  //       };
+  //     } else {
+  //       return {
+  //         ...obj
+  //       }
+  //     }
+  //   })
+  //   setTriviaQuestions(undefined)
+  // }
 
   return {
     triviaQuestions,

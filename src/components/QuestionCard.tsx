@@ -1,11 +1,10 @@
 import React from "react";
-import { triviaObject } from "../utility/Interface";
 
 
 interface Props {
     question: string,
     all_choices: string[];
-    handleClick? : (event: React.MouseEvent<Element>) => void;
+    handleClick: (event: React.MouseEvent<Element>) => void;
 }
 
  const QuestionCard : React.FC<Props> = ({question, all_choices, handleClick}) => {

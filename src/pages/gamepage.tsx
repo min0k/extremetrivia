@@ -14,7 +14,7 @@ export default function GamePage() {
         question={e.question}
         all_choices={e.all_choices}
         key={idx}
-        handleClick={(event) => handleClick(event)}
+        handleClick={handleClick}
       />
     );
   });
