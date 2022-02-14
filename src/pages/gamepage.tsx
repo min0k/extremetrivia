@@ -1,10 +1,24 @@
 import useGameLogic from "../utility/useGameLogic";
 import QuestionCard from "../components/QuestionCard";
-import React from "react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function GamePage() {
-  const { triviaQuestions, currentQuestionNumber, handleClick } =
+  const { triviaQuestions, currentQuestionNumber, handleClick, gameOver } =
     useGameLogic();
+
+    const navigate = useNavigate();
+
+  useEffect(() => {
+    
+    if (gameOver) {
+      console.log("game is over!!");
+      navigate("/gameover");
+    }
+  }, [gameOver, navigate])
+
+  console.log(gameOver);
+  
 
   const TriviaCard = triviaQuestions?.map((e, idx) => {
     // Use index instead of key, keys should be consistent because

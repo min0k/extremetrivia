@@ -6,6 +6,7 @@ import { triviaObject } from "./Interface";
 export default function useGameLogic() {
   const [triviaQuestions, setTriviaQuestions] = useState<triviaObject[]>();
   const [currentQuestionNumber, setCurrentQuestionNumber] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
     async function createTriviaQuestions() {
@@ -17,30 +18,40 @@ export default function useGameLogic() {
     createTriviaQuestions();
   }, []);
 
-  function handleClick(e?: React.MouseEvent) {
+  function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
     setCurrentQuestionNumber((prevNumber) => prevNumber + 1);
-    // updateTriviaQuestions();
+    updateTriviaQuestions(event);
   }
 
-  // const updateTriviaQuestions = (question: string) => {
-  //   const newTriviaQuestions : triviaObject = triviaQuestions?.map((obj) => {
-  //     if (obj.question === question) {
-  //       return {
-  //         ...obj,
-  //         answered: !obj.answered
-  //       };
-  //     } else {
-  //       return {
-  //         ...obj
-  //       }
-  //     }
-  //   })
-  //   setTriviaQuestions(undefined)
-  // }
+  const updateTriviaQuestions = (event: React.MouseEvent<HTMLButtonElement>) => {
+
+    const answer = event.currentTarget.value;
+
+    const correct = triviaQuestions![currentQuestionNumber].correct_answer === answer
+
+    if (correct) {
+      setGameOver(true);
+    }
+    
+    // const newTriviaQuestions  = triviaQuestions?.map((obj) => {
+    //   if (obj.question === question) {
+    //     return {
+    //       ...obj,
+    //       answered: !obj.answered
+    //     };
+    //   } else {
+    //     return {
+    //       ...obj
+    //     }
+    //   }
+    // })
+    // setTriviaQuestions(newTriviaQuestions)
+  }
 
   return {
     triviaQuestions,
     currentQuestionNumber,
     handleClick,
+    gameOver
   };
 }

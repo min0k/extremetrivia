@@ -4,7 +4,7 @@ import React from "react";
 interface Props {
     question: string,
     all_choices: string[];
-    handleClick: (event: React.MouseEvent<Element>) => void;
+    handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
  const QuestionCard : React.FC<Props> = ({question, all_choices, handleClick}) => {
@@ -12,7 +12,7 @@ interface Props {
         <div>
             <h1>{question}</h1>
             <div>
-            {all_choices.map((e, index) => <button onClick={handleClick} key={index}>{e}</button>)}
+            {all_choices.map((e, index) => <button id={index.toString()} value={e} onClick={handleClick} key={index}>{e}</button>)}
             </div>
         </div>
     )

@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<StartPage />} />
         <Route path="/trivia" element={<GamePage />} />
-        <Route path="/submitheader" element={<EndPage />} />
+        <Route path="/gameover" element={<EndPage />} />
         <Route path="*" element={<StartPage />} />
       </Routes>
     </BrowserRouter>
