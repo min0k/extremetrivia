@@ -29,23 +29,10 @@ export default function useGameLogic() {
 
     const correct = triviaQuestions![currentQuestionNumber].correct_answer === answer
 
-    if (correct) {
+    if (!correct) {
       setGameOver(true);
-    }
-    
-    // const newTriviaQuestions  = triviaQuestions?.map((obj) => {
-    //   if (obj.question === question) {
-    //     return {
-    //       ...obj,
-    //       answered: !obj.answered
-    //     };
-    //   } else {
-    //     return {
-    //       ...obj
-    //     }
-    //   }
-    // })
-    // setTriviaQuestions(newTriviaQuestions)
+      console.log(`you've answered ${currentQuestionNumber} questions correctly`);
+    } 
   }
 
   return {

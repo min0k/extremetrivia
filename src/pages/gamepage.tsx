@@ -10,12 +10,11 @@ export default function GamePage() {
     const navigate = useNavigate();
 
   useEffect(() => {
-    
     if (gameOver) {
-      console.log("game is over!!");
-      navigate("/gameover");
+      navigate("/gameover", { state: currentQuestionNumber - 1 })
     }
-  }, [gameOver, navigate])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gameOver])
 
   console.log(gameOver);
   
