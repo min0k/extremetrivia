@@ -1,17 +1,10 @@
-import { useNavigate, useLocation} from "react-router-dom"
+import { useNavigate, useLocation, NavigateFunction} from "react-router-dom"
 
-interface IProps {
-    correctAnswers: number;
-}
 
 export default function EndPage() {
 
 const location = useLocation();
 const navigate = useNavigate();
-
-console.log(location.state);
-
-
     return (
         <div>
             <p>endpage</p>

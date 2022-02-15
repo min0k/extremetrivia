@@ -16,6 +16,21 @@ export default function useGameLogic() {
     }
 
     createTriviaQuestions();
+
+    let time = 5;
+    const countdown = setInterval(() => {
+      if (time === 0) {
+        setGameOver(true);
+      } else {
+        time--;
+        console.log(`time left is currently ${time}`);
+      }
+    }, 1000);
+
+    return () => {
+      console.log("gamelogic cleanuped");
+      clearInterval(countdown);
+    };
   }, []);
 
   function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
@@ -23,22 +38,21 @@ export default function useGameLogic() {
     updateTriviaQuestions(event);
   }
 
-  const updateTriviaQuestions = (event: React.MouseEvent<HTMLButtonElement>) => {
-
+  const updateTriviaQuestions = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
     const answer = event.currentTarget.value;
-
-    const correct = triviaQuestions![currentQuestionNumber].correct_answer === answer
-
+    const correct =
+      triviaQuestions![currentQuestionNumber].correct_answer === answer;
     if (!correct) {
       setGameOver(true);
-      console.log(`you've answered ${currentQuestionNumber} questions correctly`);
-    } 
-  }
+    }
+  };
 
   return {
     triviaQuestions,
     currentQuestionNumber,
     handleClick,
-    gameOver
+    gameOver,
   };
 }

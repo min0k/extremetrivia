@@ -6,6 +6,10 @@ import StartPage from "./pages/StartPage";
 import EndPage from "./pages/EndPage";
 
 function App() {
+
+
+
+
   return (
     <BrowserRouter>
       <Routes>

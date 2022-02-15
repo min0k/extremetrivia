@@ -7,17 +7,22 @@ export default function GamePage() {
   const { triviaQuestions, currentQuestionNumber, handleClick, gameOver } =
     useGameLogic();
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (gameOver) {
-      navigate("/gameover", { state: currentQuestionNumber - 1 })
+      navigate("/gameover", { state: currentQuestionNumber - 1 });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [gameOver])
 
-  console.log(gameOver);
-  
+    console.log("gamepage rerendered");
+    
+
+
+    return () => {
+      console.log("gamepage cleanedup");
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gameOver]);
 
   const TriviaCard = triviaQuestions?.map((e, idx) => {
     // Use index instead of key, keys should be consistent because
@@ -33,7 +38,7 @@ export default function GamePage() {
   });
 
   console.log(triviaQuestions);
-  
+
   return (
     <div>
       {triviaQuestions && TriviaCard ? (
