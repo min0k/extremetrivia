@@ -1,0 +1,16 @@
+.dot {
+    height: 50px;
+    width: 50px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    -webkit-animation:ToRed 16s 
+}
+
+  @keyframes ToRed {
+    0% {background-color: green;}
+    30% {background-color: orange;}
+    50% {color: goldenrod;}
+    70% {background-color: orangered;}
+    100% {background-color: crimson;}
+}

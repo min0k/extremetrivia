@@ -2,6 +2,7 @@ import useGameLogic from "../utility/useGameLogic";
 import QuestionCard from "../components/QuestionCard";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Countdown from "../components/Countdown";
 
 export default function GamePage() {
   const { triviaQuestions, currentQuestionNumber, handleClick, gameOver } =
@@ -11,19 +12,16 @@ export default function GamePage() {
 
   useEffect(() => {
     if (gameOver) {
-      navigate("/gameover", { state: currentQuestionNumber - 1 });
+      navigate("/gameover", { state: currentQuestionNumber ? currentQuestionNumber - 1 : 0});
     }
-
-    console.log("gamepage rerendered");
-    
-
-
+    console.log("gamepage useEffect run");
     return () => {
       console.log("gamepage cleanedup");
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gameOver]);
 
+  console.log("gamepage rerendered");
   const TriviaCard = triviaQuestions?.map((e, idx) => {
     // Use index instead of key, keys should be consistent because
     // React uses keys to determine re-render effects
@@ -46,6 +44,7 @@ export default function GamePage() {
       ) : (
         <h1>loading...</h1>
       )}
+      <Countdown />
     </div>
   );
 }

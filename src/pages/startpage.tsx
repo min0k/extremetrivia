@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./StartPage.module.css";
+import Countdown from "../components/Countdown";
 
 export default function StartPage() {
 
