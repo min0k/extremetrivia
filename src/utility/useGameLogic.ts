@@ -18,10 +18,6 @@ export default function useGameLogic() {
     }
 
     createTriviaQuestions();
-
-    return () => {
-      console.log("gamelogic cleanuped");
-    };
   }, []);
 
   useEffect(() => {
@@ -36,13 +32,12 @@ export default function useGameLogic() {
     return () => {
       clearInterval(countdown);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentQuestionNumber]);
 
   function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
     setCurrentQuestionNumber((prevNumber) => prevNumber + 1);
     updateTriviaQuestions(event);
-    timer = 15;
   }
 
   const updateTriviaQuestions = (
@@ -54,6 +49,11 @@ export default function useGameLogic() {
     if (!correct) {
       setGameOver(true);
     }
+
+    if (currentQuestionNumber === 4) {
+      setGameOver(true)
+    }
+
   };
 
   return {

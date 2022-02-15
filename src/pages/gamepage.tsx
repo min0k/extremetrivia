@@ -14,14 +14,11 @@ export default function GamePage() {
     if (gameOver) {
       navigate("/gameover", { state: currentQuestionNumber ? currentQuestionNumber - 1 : 0});
     }
-    console.log("gamepage useEffect run");
     return () => {
-      console.log("gamepage cleanedup");
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gameOver]);
-
-  console.log("gamepage rerendered");
+  
   const TriviaCard = triviaQuestions?.map((e, idx) => {
     // Use index instead of key, keys should be consistent because
     // React uses keys to determine re-render effects
