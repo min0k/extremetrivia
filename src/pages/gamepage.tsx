@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Countdown from "../components/Countdown";
 
+import styles from "./GamePage.module.css";
+
 export default function GamePage() {
   const { triviaQuestions, currentQuestionNumber, handleClick, gameOver } =
     useGameLogic();
@@ -35,7 +37,7 @@ export default function GamePage() {
   console.log(triviaQuestions);
 
   return (
-    <div>
+    <div className={styles.page}>
       {triviaQuestions && TriviaCard ? (
         TriviaCard[currentQuestionNumber]
       ) : (

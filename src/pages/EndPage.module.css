@@ -1,0 +1,14 @@
+.page {
+    composes: page from "../App.css";
+}
+
+.button {
+    composes: button from "../App.css";
+    font-family: "Staatliches", cursive;
+    font-size: clamp(2.8rem, 4vw, 5.2rem);
+}
+
+.p {
+    font-size: clamp(5rem, 7vw, 8rem);
+    line-height: 84px;
+}

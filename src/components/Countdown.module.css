@@ -9,8 +9,7 @@
 
   @keyframes ToRed {
     0% {background-color: green;}
-    30% {background-color: orange;}
-    50% {color: goldenrod;}
-    70% {background-color: orangered;}
-    100% {background-color: crimson;}
+    50% {background-color: goldenrod;}
+    80% {background-color: crimson;}
+    100% {background-color: darkred;}
 }

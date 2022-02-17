@@ -7,10 +7,9 @@ import EndPage from "./pages/EndPage";
 
 function App() {
 
-
-
-
   return (
+
+    <div className="app">
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<StartPage />} />
@@ -19,6 +18,7 @@ function App() {
         <Route path="*" element={<StartPage />} />
       </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 

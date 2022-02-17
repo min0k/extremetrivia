@@ -1,20 +1,22 @@
 /* Global Styles */
 
 * {
-  box-sizing: border-box ;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body, 
+body,
 html {
+  max-width: 100vw;
   min-height: 100vh;
   min-height: -webkit-fill-available;
+  background-color: black;
   /* prevents bottom of website from being hidden behind mobile Safari’s menu bar. */
 }
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Staatliches", cursive;
 }
 
 img {
@@ -22,3 +24,42 @@ img {
   display: block;
   /* Prevents images from being inline with other elements  */
 }
+
+/* Compose */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 3.2em 1.4em;    
+  gap: 32px;
+}
+
+
+h1 {
+  color: darkred;
+  font-size: clamp(3.8rem, 7vw, 8rem);
+}
+
+p {
+  font-size: clamp(1.6rem, 2.4vw, 3rem);
+  color: whitesmoke;
+  line-height: 36px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  background-repeat: no-repeat;
+  color:  darkred;
+  font-size: clamp(3.4rem, 6vw, 6.2rem);
+}
+
+button:hover {
+  color: red;
+}
+

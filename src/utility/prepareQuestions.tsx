@@ -11,6 +11,8 @@ export default function prepareQuestions(obj: OpenTDBResponse[]) {
       return decoder(e);
     });
 
+    // MINO -- You might need another custom decoder just for the answer choices.
+
     // shuffle all 4 answers
     const allChoices = decodedIncorrectAnswers;
     allChoices.push(decodedCorrectAnswer)
