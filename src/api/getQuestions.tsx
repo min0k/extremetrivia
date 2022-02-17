@@ -1,4 +1,4 @@
-const OpenTDB_URL = "https://opentdb.com/api.php?amount=5&difficulty=hard&type=multiple"
+const OpenTDB_URL = "https://opentdb.com/api.php?amount=49&difficulty=hard&type=multiple"
 
 export default async function getQuestions() {
   try {

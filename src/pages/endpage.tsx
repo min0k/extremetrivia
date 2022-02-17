@@ -7,8 +7,8 @@ export default function EndPage() {
 
   return (
     <div className={styles.page}>
-      {location.state === 4 ? (
-        <h1>WINNER</h1>
+      {location.state === 49 ? (
+        <h1>YOU ARE THE TRIVIA MASTER.</h1>
       ) : (
         <p className={styles.p}>{`you got ${location.state ? location.state : "no"} ${
           location.state === 1 ? "question" : "questions"

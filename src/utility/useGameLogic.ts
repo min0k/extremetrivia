@@ -50,7 +50,7 @@ export default function useGameLogic() {
       setGameOver(true);
     }
 
-    if (currentQuestionNumber === 4) {
+    if (currentQuestionNumber === 49) {
       setGameOver(true)
     }
 
