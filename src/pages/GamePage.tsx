@@ -34,8 +34,6 @@ export default function GamePage() {
     );
   });
 
-  console.log(triviaQuestions);
-
   return (
     <div className={styles.page}>
       {triviaQuestions && TriviaCard ? (
