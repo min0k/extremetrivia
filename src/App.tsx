@@ -5,6 +5,8 @@ import GamePage from "./pages/GamePage";
 import StartPage from "./pages/StartPage";
 import EndPage from "./pages/EndPage";
 
+// temp change, testing commit functionality
+
 function App() {
 
   return (
