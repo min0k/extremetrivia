@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./QuestionCard.module.css";
 
-import "./QuestionCard.module.css";
-
 interface Props {
   question: string;
   all_choices: string[];

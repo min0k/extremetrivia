@@ -3,7 +3,6 @@ import decoder from "./decoder";
 
 export default function prepareQuestions(obj: OpenTDBResponse[]) {
 
-  // decode html entities
   const preparedQuestions = obj.map((e) => {
     const decodedQuestion = decoder(e.question);
     const decodedCorrectAnswer = decoder(e.correct_answer);
@@ -11,9 +10,7 @@ export default function prepareQuestions(obj: OpenTDBResponse[]) {
       return decoder(e);
     });
 
-    // MINO -- You might need another custom decoder just for the answer choices.
-
-    // shuffle all 4 answers
+    
     const allChoices = decodedIncorrectAnswers;
     allChoices.push(decodedCorrectAnswer)
 

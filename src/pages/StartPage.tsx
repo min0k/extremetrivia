@@ -9,8 +9,7 @@ export default function StartPage() {
     <div className={styles.page}>
       <h1>Welcome to Extreme Trivia. Think you're a know-it-all? Prove it.</h1>
       <p>
-        You only have 15 seconds to answer each question. 
-        Answer 50 questions correctly to win.
+        You have 15 seconds to answer each question. Answer 50 questions to win.
       </p>
       <button onClick={() => navigate("/trivia")}>START GAME</button>
     </div>

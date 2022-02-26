@@ -22,8 +22,6 @@ export default function GamePage() {
   }, [gameOver]);
   
   const TriviaCard = triviaQuestions?.map((e, idx) => {
-    // Use index instead of key, keys should be consistent because
-    // React uses keys to determine re-render effects
     return (
       <QuestionCard
         question={e.question}
