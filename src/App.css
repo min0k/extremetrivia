@@ -32,7 +32,7 @@ img {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  padding: 3.2em 1.4em;    
+  padding: 3.2em;    
   gap: 32px;
 }
 
