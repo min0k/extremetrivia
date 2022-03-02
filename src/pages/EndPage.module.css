@@ -1,0 +1,26 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  align-items: flex-start;
+  margin-top: 100px;
+}
+
+.button {
+  box-shadow: 0 0 5px 1px darkred;
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.button:hover {
+  box-shadow: 0 0 5px 3px darkred;
+}
+
+.h1 {
+  font-weight: 800;
+}
+
+.p {
+}

@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import styles from "./EndPage.module.css"
+import styles from "./EndPage.module.css";
 
 export default function EndPage() {
   const location = useLocation();
@@ -8,13 +8,15 @@ export default function EndPage() {
   return (
     <div className={styles.page}>
       {location.state === 49 ? (
-        <h1>YOU ARE THE TRIVIA MASTER.</h1>
+        <h1>You are a trivia master</h1>
       ) : (
-        <p className={styles.p}>{`you got ${location.state ? location.state : "no"} ${
+        <h1>{`You got ${location.state ? location.state : "no"} ${
           location.state === 1 ? "question" : "questions"
-        } right.`}</p>
+        } right`}</h1>
       )}
-      <button className={styles.button} onClick={() => navigate("/")}>new game</button>
+      <button className={styles.button} onClick={() => navigate("/")}>
+        new game
+      </button>
     </div>
   );
 }

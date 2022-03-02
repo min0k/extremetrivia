@@ -1,15 +1,24 @@
 .dot {
-    height: 50px;
-    width: 50px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    -webkit-animation:ToRed 16s 
+  height: 50px;
+  width: 50px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-animation: ToRed 16s;
+  margin: 10px;
 }
 
-  @keyframes ToRed {
-    0% {background-color: green;}
-    50% {background-color: goldenrod;}
-    80% {background-color: crimson;}
-    100% {background-color: darkred;}
+@keyframes ToRed {
+  0% {
+    background-color: green;
+  }
+  50% {
+    background-color: goldenrod;
+  }
+  80% {
+    background-color: crimson;
+  }
+  100% {
+    background-color: darkred;
+  }
 }

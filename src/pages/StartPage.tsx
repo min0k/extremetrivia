@@ -1,6 +1,7 @@
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import styles from "./StartPage.module.css";
 import skull from "../skull.png";
+
 import React from "react";
 
 export default function StartPage() {
@@ -8,21 +9,18 @@ export default function StartPage() {
 
   const [categoryChosen, setCategoryChosen] = React.useState(false);
 
-  function handleCategoryClick() {
-    setCategoryChosen(true);
-  }
-
   const categoryList = [
     "Advanced Calculus",
-    "Anime",
     "Classical Music",
     "Indie Movies",
     "Natural Disasters",
-    "Birthdays",
     "Controversial",
     "Physics",
     "Greek Mythology",
     "Australian Politics",
+    "Slang",
+    "Architecture",
+    "Poetry",
   ];
 
   const categories = categoryList.map((e, idx) => (
@@ -33,7 +31,7 @@ export default function StartPage() {
         boxShadow: categoryChosen === true ? "none" : undefined,
         color: categoryChosen === true ? "lightgrey" : undefined,
       }}
-      onClick={handleCategoryClick}
+      onClick={() => setCategoryChosen(true)}
       key={idx}
     >
       {e}
@@ -42,27 +40,21 @@ export default function StartPage() {
 
   return (
     <div className={styles.page}>
-      <div className={styles.mainContent}>
-        <div className={styles.textContent}>
-          <h1 className={styles.h1}>
-            Welcome to <span>Extreme</span> Trivia. Think you're a know-it-all?
-            Prove it.
-          </h1>
-          <p>
-            You have 15 seconds to answer each question. Answer 50 questions to
-            win.
-          </p>
-          {<div className={styles.choices}>{categories}</div>}
-          {StartTriviaButton(navigate, categoryChosen)}
-        </div>
-        <div className={styles.imgContainer}>
-          <img src={skull} alt="skull" className={styles.skullImg}></img>
-        </div>
+      <div className={styles.textContent}>
+        <h1 className={styles.h1}>
+          Welcome to <span>Extreme</span> Trivia. Think you're a know-it-all?
+          Prove it.
+        </h1>
+        <p>
+          You have 15 seconds to answer each question. Answer 50 questions to
+          win.
+        </p>
+        <h3>Choose a category:</h3>
+        {<div className={styles.choices}>{categories}</div>}
+        {StartTriviaButton(navigate, categoryChosen)}
       </div>
-      <div className={styles.footerContainer}>
-        <a className={styles.footer} href={"/"}>
-          Made by Mino Kim
-        </a>
+      <div className={styles.imgContainer}>
+        <img src={skull} alt="skull" className={styles.skullImg}></img>
       </div>
     </div>
   );

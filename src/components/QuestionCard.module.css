@@ -11,3 +11,9 @@
 .button:hover {
   box-shadow: 0 0 5px 3px darkred;
 }
+
+.h1 {
+  font-weight: 800;
+  margin: 0;
+  padding: 8px;
+}

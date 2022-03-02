@@ -5,7 +5,6 @@ import GamePage from "./pages/GamePage";
 import StartPage from "./pages/StartPage";
 import EndPage from "./pages/EndPage";
 import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
           <Route path="/gameover" element={<EndPage />} />
           <Route path="*" element={<StartPage />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </div>
   );
