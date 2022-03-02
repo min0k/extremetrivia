@@ -14,13 +14,14 @@ export default function GamePage() {
 
   useEffect(() => {
     if (gameOver) {
-      navigate("/gameover", { state: currentQuestionNumber ? currentQuestionNumber - 1 : 0});
+      navigate("/gameover", {
+        state: currentQuestionNumber ? currentQuestionNumber - 1 : 0,
+      });
     }
-    return () => {
-    };
+    return () => {};
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gameOver]);
-  
+
   const TriviaCard = triviaQuestions?.map((e, idx) => {
     return (
       <QuestionCard

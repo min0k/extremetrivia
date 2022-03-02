@@ -22,7 +22,7 @@ const QuestionCard: React.FC<Props> = ({
             value={e}
             onClick={handleClick}
             key={index}
-            className={styles.choiceButtons}
+            className={styles.button}
           >
             {e}
           </button>

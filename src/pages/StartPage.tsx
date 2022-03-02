@@ -1,7 +1,6 @@
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import styles from "./StartPage.module.css";
 import skull from "../skull.png";
-
 import React from "react";
 
 export default function StartPage() {
@@ -43,14 +42,6 @@ export default function StartPage() {
 
   return (
     <div className={styles.page}>
-      <nav className={styles.nav}>
-        <a href={"/"} className={styles.navLogo}>
-          Extreme Trivia
-        </a>
-        <a href={"/"} className={styles.about}>
-          About
-        </a>
-      </nav>
       <div className={styles.mainContent}>
         <div className={styles.textContent}>
           <h1 className={styles.h1}>
@@ -84,7 +75,7 @@ function StartTriviaButton(
   return (
     <div style={{ display: categoryChosen === true ? undefined : "none" }}>
       <h2 className={styles.extremeText}>
-        You don't get to choose the category. This is EXTREME trivia.
+        This is EXTREME trivia. You don't get choose the category.
       </h2>
       <button className={styles.button} onClick={() => navigate("/trivia")}>
         START GAME
