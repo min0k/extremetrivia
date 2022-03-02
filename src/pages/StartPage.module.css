@@ -1,3 +1,142 @@
 .page {
-    composes: page from "../App.css";
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.mainContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.textContent {
+  padding: 0 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.imgContainer {
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.skullImg {
+  max-width: 240px;
+}
+
+.h1 {
+  font-weight: 800;
+}
+
+.h1 span {
+  background: -webkit-linear-gradient(red, #333);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button {
+  box-shadow: 0 0 5px 1px darkred;
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.button:hover {
+  box-shadow: 0 0 5px 3px darkred;
+}
+
+.footerContainer {
+  min-width: 100vw;
+  height: 40px;
+  box-shadow: 0px -4px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.footer,
+.nav {
+  color: rgb(107, 111, 118);
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  margin: 16px 30px;
+}
+
+.navLogo {
+  background: -webkit-linear-gradient(black, black);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.choices .button {
+  margin: 8px;
+}
+
+.about {
+  color: black;
+  text-decoration: none;
+}
+
+.categoryText {
+  font-weight: 500;
+}
+
+.extremeText {
+  font-weight: 800;
+  background: -webkit-linear-gradient(red, #333);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 500px) {
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 501px) and (max-width: 960px) {
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  .mainContent {
+    flex-direction: row;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+
+  .imgContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .textContent {
+    flex: 1;
+  }
+
+  .imgContainer {
+    flex: 1;
+  }
+
+  .skullImg {
+    max-width: 300px;
+  }
 }
