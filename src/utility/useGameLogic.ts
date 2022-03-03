@@ -8,7 +8,7 @@ export default function useGameLogic() {
   const [currentQuestionNumber, setCurrentQuestionNumber] = useState(0);
   const [gameOver, setGameOver] = useState(false);
 
-  let timer = 1500;
+  let timer = 15;
 
   useEffect(() => {
     async function createTriviaQuestions() {
