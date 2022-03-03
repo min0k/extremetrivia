@@ -1,20 +1,12 @@
 .nav {
-  color: rgb(107, 111, 118);
-  min-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-}
-
-.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-decoration: none;
-  margin: 16px 30px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 0px;
+  padding: 0px 30px;
+  height: 61px;
 }
-
 .navLogo {
   background: -webkit-linear-gradient(black, black);
   -webkit-background-clip: text;
