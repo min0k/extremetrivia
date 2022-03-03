@@ -2,10 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin: 20px 0;
 }
 
 .button {
   composes: button from "../pages/StartPage.module.css";
+  min-width: 120px;
 }
 
 .button:hover {
