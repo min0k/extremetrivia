@@ -15,7 +15,7 @@ export default function EndPage() {
         } right`}</h1>
       )}
       <button className={styles.button} onClick={() => navigate("/")}>
-        new game
+        NEW GAME
       </button>
     </div>
   );
