@@ -67,7 +67,7 @@ function StartTriviaButton(
   return (
     <div style={{ display: categoryChosen === true ? undefined : "none" }}>
       <h2 className={styles.extremeText}>
-        This is EXTREME trivia. You don't get choose the category.
+        This is EXTREME trivia, you don't get to choose.
       </h2>
       <button className={styles.button} onClick={() => navigate("/trivia")}>
         START GAME
