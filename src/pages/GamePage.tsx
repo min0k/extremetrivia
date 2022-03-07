@@ -3,15 +3,12 @@ import QuestionCard from "../components/QuestionCard";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Countdown from "../components/Countdown";
-
 import ClipLoader from "react-spinners/ClipLoader";
-
 import styles from "./GamePage.module.css";
 
 export default function GamePage() {
   const { triviaQuestions, currentQuestionNumber, handleClick, gameOver } =
     useGameLogic();
-
   const navigate = useNavigate();
 
   useEffect(() => {

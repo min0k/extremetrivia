@@ -1,4 +1,4 @@
-import { NavigateFunction, useNavigate } from "react-router-dom";
+import { NavigateFunction, useNavigate, Link } from "react-router-dom";
 import styles from "./StartPage.module.css";
 import skull from "../skull.png";
 
@@ -69,9 +69,9 @@ function StartTriviaButton(
       <h2 className={styles.extremeText}>
         This is EXTREME trivia, you don't get to choose.
       </h2>
-      <button className={styles.button} onClick={() => navigate("/trivia")}>
-        START GAME
-      </button>
+      <Link to={"/trivia"}>
+        <button className={styles.button}>START GAME</button>
+      </Link>
     </div>
   );
 }
