@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Countdown from "../components/Countdown";
 
+import ClipLoader from "react-spinners/ClipLoader";
+
 import styles from "./GamePage.module.css";
 
 export default function GamePage() {
@@ -38,9 +40,9 @@ export default function GamePage() {
       {triviaQuestions && TriviaCard ? (
         TriviaCard[currentQuestionNumber]
       ) : (
-        <h1>loading...</h1>
+        <ClipLoader color={"Red"} size={150} />
       )}
-      <Countdown />
+      {triviaQuestions && TriviaCard ? <Countdown /> : null}
     </div>
   );
 }
