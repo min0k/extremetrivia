@@ -5,6 +5,7 @@ import StartPage from "./pages/StartPage";
 import NavBar from "./components/NavBar";
 import About from "./pages/About";
 import GamePage from "./pages/GamePage";
+import EndPage from "./pages/EndPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<StartPage />} />
           <Route path="/trivia" element={<GamePage />} />
+          <Route path="/gameover" element={<EndPage />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<StartPage />} />
         </Routes>
