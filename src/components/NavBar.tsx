@@ -7,7 +7,7 @@ export default function NavBar() {
         <a href={"/"} className={styles.navLogo}>
           Extreme Trivia
         </a>
-        <a href={"/"} className={styles.about}>
+        <a href={"/about"} className={styles.about}>
           About
         </a>
       </nav>
